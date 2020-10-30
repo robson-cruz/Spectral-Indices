@@ -1,4 +1,4 @@
-Scrpit created to highlight forest vegetation in the amazon.
+Scrpit created to highlight forest vegetation in the amazon using Google Earth Engine.
 
 Spectral Indices:
 /*
