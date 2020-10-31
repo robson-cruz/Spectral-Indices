@@ -1,0 +1,9 @@
+ROUSE, J. W.; HAAS, R. H.; SCHELL, J. A.; DEERING, D. W. Monitoring vegetation systems in the great plains with ERTS. In: Earth Resources Technology Satellite – 1 Symposium, n. 3, 1973. Proceedings... Washington, p. 309 – 317, 1973.
+
+HUETE, Alfredo. soil-adjusted vegetation index (SAVI). Remote Sensing of Enviromnt, v. 25, n. 3, p. 295-309, 1988.
+
+HUETE, Alfredo et al. Overview of the radiometric and biophysical performance of the MODIS vegetation indices. Remote Sensing of Environment, v. 83(1-2), p. 195-213, 2002.
+
+KEY, C.H. & BENSON, N.C. The Normalized Burn ratio (NBR): A Landsat TM radiometric measure of burn severity. U.S. Department of Interior, Northern Rocky Mountain Science Centre, 1999.
+
+SOUZA JR., C.M.; ROBERTS, D.A.; COCHRANE, M.A. Combining spectral and spatial information to map canopy damage from selective logging and forest fires. Remote Sensing of Environmental, v. 98, p. 329–343, 2005.
