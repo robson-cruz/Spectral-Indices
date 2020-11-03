@@ -290,13 +290,14 @@ var medianAnual_2 = medianAnual(col_2).clip(UMF);
 *********************************************************************************
 */
 var visNDVI = {
-  min: -1,
-  max: 1,
-  palette: [
+  min: 0.2,
+  max: 0.9,
+  gamma: 1.4
+  /*palette: [
       'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718',
       '74A901', '66A000', '529400', '3E8601', '207401', '056201',
       '004C00', '023B01', '012E01', '011D01', '011301'
-  ]
+  ]*/
 };
 
 var visNDWI = {
@@ -306,9 +307,9 @@ var visNDWI = {
 };
 
 var visNDFI = {
-  min: 0,
+  min: 0.4,
   max: 1,
-  gamma: 0.1
+  gamma: 1
 };
 
 var rgbMedian = {
