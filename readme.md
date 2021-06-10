@@ -13,6 +13,3 @@ TM
 ETM+
 OLI
 
-<p align="center">
-<img src="https://github.com/rcflorestal/Spectral-Indices/blob/main/output/gif_1984_2020.gif">
-</p>
