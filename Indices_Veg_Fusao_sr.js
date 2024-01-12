@@ -61,15 +61,15 @@ var coefficients = {
 // Define function to get and rename bands of interest from OLI.
 function renameOLI(img){
                 return img.select(
-                          ['B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'pixel_qa'],
-                          ['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2', 'pixel_qa']);
+                          ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7', 'QA_PIXEL'],
+                          ['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2', 'QA_PIXEL']);
 }
 
 // Define function to get and rename bands of interest from TM.
 function renameTM(img){
                 return img.select(
-                          ['B1', 'B2', 'B3', 'B4', 'B5', 'B7', 'pixel_qa'],
-                          ['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2', 'pixel_qa']);
+                          ['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B7', 'QA_PIXEL'],
+                          ['Blue', 'Green', 'Red', 'NIR', 'SWIR1', 'SWIR2', 'QA_PIXEL']);
 }
 
 // Define function to apply harmonization transformation.
@@ -79,14 +79,14 @@ function tm2oli(img){
                                 .add(coefficients.itcps)
                                 .round()
                                 .toShort()
-                                .addBands(img.select('pixel_qa'));
+                                .addBands(img.select('QA_PIXEL'));
 }
 
 // Define function to mask out clouds and cloud shadows.
 function fmask(img){
                 var cloudShadowBitMask = 1 << 3;
                 var cloudsBitMask = 1 << 5;
-                var qa = img.select('pixel_qa');
+                var qa = img.select('QA_PIXEL');
                 var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
                                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
                 return img.updateMask(mask);
@@ -243,9 +243,9 @@ function resampleImg(img){
 }
 
 // Get Landsat surface reflectance collections for OLI, ETM+ and TM sensors
-var oliCol = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR');
-var etmCol= ee.ImageCollection('LANDSAT/LE07/C01/T1_SR');
-var tmCol= ee.ImageCollection('LANDSAT/LT05/C01/T1_SR');
+var oliCol = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2');
+var etmCol= ee.ImageCollection('LANDSAT/LE07/C02/T1_L2');
+var tmCol= ee.ImageCollection('LANDSAT/LT04/C02/T1_L2');
 
 // Define a first collection filter.
 var colFilter_1 = ee.Filter.and(
